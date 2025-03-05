@@ -11,8 +11,8 @@ public class FileServer {
         private BufferedReader in;
 
         public void start(int port) throws IOException {
-                while(true){
-                    this.serverSocket = new ServerSocket(port);
+            this.serverSocket = new ServerSocket(port);
+            while(true){
                     this.clientSocket = this.serverSocket.accept();
                     this.out = this.clientSocket.getOutputStream();
                     this.in = new BufferedReader(new InputStreamReader(this.clientSocket.getInputStream()));
@@ -40,14 +40,13 @@ public class FileServer {
 
                     this.stop();
                 }
-
             }
 
         public void stop() throws IOException {
             this.in.close();
             this.out.close();
             this.clientSocket.close();
-            this.serverSocket.close();
+//            this.serverSocket.close();
         }
         public static void main(String[] args) throws IOException {
             FileServer server=new FileServer();
