@@ -13,7 +13,6 @@ public class FileServer {
 
         while (true) {
             Socket clientSocket = this.serverSocket.accept();
-            System.out.println("New client connected");
             new ClientHandler(clientSocket).start();
         }
     }
@@ -45,7 +44,6 @@ class ClientHandler extends Thread {
             String filename = in.readLine();
             System.out.println("Requested file: " + filename);
             File myFile = new File("server/" + filename);
-            System.out.println(myFile.getAbsolutePath());
             if (!myFile.exists() || myFile.length() == 0) {
                 System.out.println("File doesn't exist!");
             } else {
