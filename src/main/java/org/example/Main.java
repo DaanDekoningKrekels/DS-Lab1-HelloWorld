@@ -23,6 +23,7 @@ public class Main {
             String localName = "payload"+i+".png";
             client.requestFile(filename,localName);
             client.stopConnection();
+            System.out.println("Processed client "+i);
         }
 
     }

@@ -20,7 +20,6 @@ public class FileServer {
                     String filename = in.readLine();
                     System.out.println("Requested file: "+filename);
                     File myFile = new File("server/"+filename);
-                    System.out.println(myFile.getAbsolutePath());
                     if (myFile.length() == 0){
                         System.out.println("File doesn't exist!");
                     } else{
