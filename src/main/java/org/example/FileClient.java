@@ -15,11 +15,11 @@ public class FileClient {
             this.in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
         }
 
-        public void requestFile(String filename){
+        public void requestFile(String filename,String localName){
             try {
                 this.out.println(filename);
                 InputStream is = this.clientSocket.getInputStream();
-                 FileOutputStream fos = new FileOutputStream("client/"+filename);
+                 FileOutputStream fos = new FileOutputStream("client/"+localName);
                  BufferedOutputStream bos = new BufferedOutputStream(fos);
 
                 byte[] buffer = new byte[4096];
