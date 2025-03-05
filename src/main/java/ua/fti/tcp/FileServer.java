@@ -1,4 +1,4 @@
-package org.example;
+package ua.fti.tcp;
 
 import java.io.*;
 import java.net.ServerSocket;
